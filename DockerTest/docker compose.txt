@@ -1,0 +1,18 @@
+version: "3"
+services:
+  MySql
+    image: mysql
+    ports:
+      - 27017
+  backend:
+    build: ./peep-server/
+    ports:
+      - 8080:8080
+    links:
+      - mysql
+  frontend:
+    build: ./peep-client/
+    ports:
+      - 3000:3000
+    links:
+      - backend

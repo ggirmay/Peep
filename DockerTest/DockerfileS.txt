@@ -1,0 +1,4 @@
+FROM openjdk
+ADD twitter-clone-api/target/twitter-clone-server-v2.jar Ibrahim.jar
+EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "Ibrahim.jar"]
